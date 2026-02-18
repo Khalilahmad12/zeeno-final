@@ -35,7 +35,7 @@ const AcademyHero: React.FC = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center bg-[#05080F] py-20 overflow-hidden text-white pt-10 md:pt-0"
+      className="relative min-h-screen flex items-center justify-center bg-[#05080F] py-20 overflow-hidden text-white -pt-10 md:pt-0"
     >
       {/* 1. Cinematic Background */}
       <motion.div 
