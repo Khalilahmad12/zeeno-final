@@ -94,11 +94,11 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="overflow-x-hidden  bg-white">
+    <div className="overflow-x-hidden  bg-white pt-5">
       {/* SECTION 1: HERO */}
       <AboutHero onNavigate={onNavigate} />
 
-      <div className="container mx-auto"> 
+      <div className="container mx-auto px-4 md:px-1"> 
       <WhoWeAre />
 
       {/* SECTION 3: CEO MESSAGE */}

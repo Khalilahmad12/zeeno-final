@@ -113,13 +113,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="col-span-12 lg:col-span-6 justify-self-center lg:justify-self-start">
           
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7"
+            className="lg:col-span-7 "
           >
             <motion.div
               variants={wordVariants}
