@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeeno Globle Solution - IT & Digital Marketing Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                blue: 'var(--color-primary)',
+                orange: 'var(--color-accent)',
+                dark: 'var(--color-primary-dark)',
+                light: 'var(--color-primary-light)',
+                soft: 'var(--color-bg-soft)'
+              },
+              primary: 'var(--color-primary)',
+              accent: 'var(--color-accent)'
+            },
+            fontFamily: {
+              sans: ['var(--font-body)', 'Inter', 'sans-serif'],
+              heading: ['var(--font-heading)', 'Poppins', 'sans-serif'],
+            },
+            borderRadius: {
+              'sm': 'var(--radius-sm)',
+              'md': 'var(--radius-md)',
+              'lg': 'var(--radius-lg)',
+            },
+            boxShadow: {
+              'sm': 'var(--shadow-sm)',
+              'md': 'var(--shadow-md)',
+            },
+            spacing: {
+              'xs': 'var(--space-xs)',
+              'sm': 'var(--space-sm)',
+              'md': 'var(--space-md)',
+              'lg': 'var(--space-lg)',
+              'xl': 'var(--space-xl)',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* ========== BRAND COLORS ========== */
+        --color-primary: #029ae3;
+        --color-accent: #FE880E;
+
+        /* ========== SUPPORTING COLORS ========== */
+        --color-primary-dark: #0B2A3C;
+        --color-primary-light: #E8F6FD;
+        --color-bg-soft: #F5F7FA;
+
+        --color-text-dark: #1F2933;
+        --color-text-light: #6B7280;
+        --color-border: #E5E7EB;
+        --color-white: #FFFFFF;
+
+        /* ========== FONTS ========== */
+        --font-heading: 'Poppins', sans-serif;
+        --font-body: 'Inter', sans-serif;
+
+        /* ========== FONT SIZES ========== */
+        --text-xs: 12px;
+        --text-sm: 14px;
+        --text-md: 16px;
+        --text-lg: 20px;
+        --text-xl: 28px;
+        --text-2xl: 36px;
+        --text-3xl: 48px;
+
+        /* ========== SPACING ========== */
+        --space-xs: 6px;
+        --space-sm: 12px;
+        --space-md: 24px;
+        --space-lg: 48px;
+        --space-xl: 80px;
+
+        /* ========== BORDER RADIUS ========== */
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 18px;
+
+        /* ========== SHADOWS ========== */
+        --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+        --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--color-text-dark);
+        background-color: var(--color-white);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+      }
+
+      .btn-primary {
+        background-color: var(--color-primary);
+        color: white;
+        transition: all 0.3s ease;
+      }
+      .btn-accent {
+        background-color: var(--color-accent);
+        color: white;
+        transition: all 0.3s ease;
+      }
+      .text-glow {
+        text-shadow: 0 0 15px rgba(254, 136, 14, 0.4);
+      }
+      
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.4.7",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.570.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "url": "https://esm.sh/url@^0.11.4"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

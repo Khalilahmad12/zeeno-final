@@ -1,0 +1,7 @@
+{
+  "name": "Zeeno Global Clone",
+  "description": "A high-performance, dark-themed agency portfolio website for Zeeno Global Solution, featuring responsive design, modern UI/UX, and professional service showcases.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
