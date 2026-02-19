@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowUpRight, Globe, Shield } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: string) => void;
@@ -9,116 +11,180 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
 
   const handleLink = (id: string) => {
     setCurrentPage(id);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const techServices = [
+    { name: 'Web Development', id: 'web-dev' },
+    { name: 'App Development', id: 'app-dev' },
+    { name: 'UI/UX Design', id: 'uiux' },
+    { name: 'Backend & API', id: 'backend' },
+    { name: 'Cloud & DevOps', id: 'cloud' },
+    { name: 'Database Solutions', id: 'database' }
+  ];
+
+  const zeenoOfferings = [
+    { name: 'Manpower Supplier', id: 'manpower' },
+    { name: 'Superstore & Pharmacy', id: 'superstore' },
+    { name: 'Export & Import', id: 'export-import' },
+    { name: 'Property Consultancy', id: 'property' },
+    { name: 'Advertising Studio', id: 'commercial-studio' },
+    { name: 'Skills Academy', id: 'academy' }
+  ];
+
+  const socials = [
+    { icon: <Facebook size={18} />, label: 'Facebook', href: '#' },
+    { icon: <Twitter size={18} />, label: 'Twitter', href: '#' },
+    { icon: <Linkedin size={18} />, label: 'LinkedIn', href: '#' },
+    { icon: <Instagram size={18} />, label: 'Instagram', href: '#' }
+  ];
+
   return (
-    <footer className="bg-brand-dark text-white pt-20 pb-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#05080F] text-white pt-24 pb-10 relative overflow-hidden border-t border-white/5">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-blue/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[150px] -mr-64 -mb-64" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Footer Grid - Using 4 equal columns for symmetrical spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
           
-          {/* Column 1: Company Info */}
-          <div className="space-y-6">
+          {/* Section 1: Brand & Bio */}
+          <div className="space-y-8">
             <div 
-              className="flex items-center gap-3 cursor-pointer"
+              className="flex items-center gap-3 cursor-pointer group w-fit"
               onClick={() => handleLink('home')}
             >
-              <div className="w-10 h-10 bg-brand-blue rounded flex items-center justify-center font-bold text-xl text-white">Z</div>
-              <span className="text-xl font-bold">Zeeno Globle</span>
+              <img src="/logo.jpeg" alt="Zeeno Logo" className="h-12 w-auto brightness-0 invert" />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Leading digital solution provider empowering businesses through innovation, expertise, and a commitment to global excellence.
+            <p className="text-slate-400 text-sm leading-relaxed font-medium">
+              Architecting high-performance digital ecosystems and global business solutions that empower industry leaders to scale with confidence.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-brand-blue transition-colors group">
-                <span className="sr-only">Facebook</span>
-                <svg className="w-4 h-4 fill-current text-white/70 group-hover:text-white" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-brand-blue transition-colors group">
-                <span className="sr-only">X (Twitter)</span>
-                <svg className="w-4 h-4 fill-current text-white/70 group-hover:text-white" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-brand-blue transition-colors group">
-                <span className="sr-only">LinkedIn</span>
-                <svg className="w-4 h-4 fill-current text-white/70 group-hover:text-white" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="#" className="w-8 h-8 rounded bg-white/5 flex items-center justify-center hover:bg-brand-blue transition-colors group">
-                <span className="sr-only">Instagram</span>
-                <svg className="w-4 h-4 fill-current text-white/70 group-hover:text-white" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.558.217.957.477 1.377.896.419.42.679.819.896 1.377.163.422.358 1.057.412 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.412 2.227-.217.558-.477.957-.896 1.377-.42.419-.819.679-1.377.896-.422.163-1.057.358-2.227.412-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.412-.558-.217-.957-.477-1.377-.896-.419-.42-.679-.819-.896-1.377-.163-.422-.358-1.057-.412-2.227C2.175 15.657 2.163 15.277 2.163 12s.012-3.584.07-4.85c.054-1.17.249-1.805.412-2.227.217-.558.477-.957.896-1.377.42-.419.819-.679 1.377-.896.422-.163 1.057-.358 2.227-.412 1.266-.058 1.646-.07 4.85-.07M12 0C8.741 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.219 1.347 20.551.935 19.76.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                </svg>
-              </a>
+            <div className="flex items-center gap-3">
+              {socials.map((social, idx) => (
+                <a 
+                  key={idx} 
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all duration-300"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Section 2: Tech Services */}
           <div>
-            <h4 className="text-lg font-bold mb-8 border-l-4 border-brand-blue pl-4">Quick Links</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map(link => (
-                <li key={link}>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-1 h-4 bg-brand-blue rounded-full" />
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white">IT Solutions</h4>
+            </div>
+            <ul className="space-y-4">
+              {techServices.map((service) => (
+                <li key={service.id}>
                   <button 
-                    onClick={() => handleLink(link.toLowerCase())}
-                    className="hover:text-brand-blue transition-colors text-left"
+                    onClick={() => handleLink(service.id)}
+                    className="text-slate-400 hover:text-brand-blue text-[13px] font-bold transition-all flex items-center gap-2 group"
                   >
-                    {link}
+                    <div className="w-1 h-1 rounded-full bg-white/10 group-hover:bg-brand-blue transition-all" />
+                    {service.name}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Section 3: Diversified Offerings */}
           <div>
-            <h4 className="text-lg font-bold mb-8 border-l-4 border-brand-blue pl-4">Services</h4>
-            <ul className="space-y-4 text-sm text-slate-400">
-              {['Web Development', 'SEO', 'E-commerce', 'Social Media'].map(service => (
-                <li key={service} className="hover:text-brand-blue transition-colors cursor-pointer">
-                  {service}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-1 h-4 bg-brand-orange rounded-full" />
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white">Zeeno Offerings</h4>
+            </div>
+            <ul className="space-y-4">
+              {zeenoOfferings.map((offering) => (
+                <li key={offering.id}>
+                  <button 
+                    onClick={() => handleLink(offering.id)}
+                    className="text-slate-400 hover:text-brand-orange text-[13px] font-bold transition-all flex items-center gap-2 group"
+                  >
+                    <div className="w-1 h-1 rounded-full bg-white/10 group-hover:bg-brand-orange transition-all" />
+                    {offering.name}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
-          <div>
-            <h4 className="text-lg font-bold mb-8 border-l-4 border-brand-blue pl-4">Contact</h4>
-            <div className="space-y-4 text-sm text-slate-400">
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>03009274179</span>
+          {/* Section 4: Contact & Location */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-1 h-4 bg-white/20 rounded-full" />
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white">Global Reach</h4>
+            </div>
+            <div className="space-y-6">
+              <div className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">Direct Connect</p>
+                  <p className="text-sm font-bold text-white group-hover:text-brand-blue transition-colors">03009274179</p>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="break-all">info@zeenogloblesolution.com</span>
+
+              <div className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
+                  <Mail size={18} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">Inquiry Desk</p>
+                  <p className="text-sm font-bold text-white truncate group-hover:text-brand-orange transition-colors">info@zeenogloblesolution.com</p>
+                </div>
               </div>
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Karachi, Pakistan</span>
+
+              <div className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 group-hover:bg-white group-hover:text-brand-dark transition-all duration-300">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">Head Office</p>
+                  <p className="text-sm font-bold text-white">Karachi, Pakistan</p>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold uppercase tracking-widest text-center md:text-left">
-          <p>© {currentYear} Zeeno Globle Solution Pvt Limited. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-brand-blue transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-blue transition-colors">Terms & Conditions</a>
+        {/* Dynamic Divider */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-10" />
+
+        {/* Footer Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 order-2 md:order-1">
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] text-center md:text-left">
+              © {currentYear} <span className="text-slate-400">Zeeno Globle Solution Pvt Limited</span>
+            </p>
+            <div className="flex gap-6">
+              {['Privacy', 'Terms', 'Compliance'].map(item => (
+                <a key={item} href="#" className="text-[10px] font-bold text-slate-600 hover:text-white uppercase tracking-widest transition-colors">
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-8 order-1 md:order-2 opacity-50 grayscale hover:grayscale-0 transition-all">
+            <div className="flex items-center gap-2">
+              <Globe size={14} className="text-slate-400" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">ISO 9001:2015</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Shield size={14} className="text-slate-400" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">SECP Registered</span>
+            </div>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ const AcademyHighlight: React.FC<AcademyHighlightProps> = ({ onNavigate }) => {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-white py-24 lg:py-10"
+      className="relative w-full overflow-hidden bg-white pb-14 lg:py-10"
     >
       {/* Subtle Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none">

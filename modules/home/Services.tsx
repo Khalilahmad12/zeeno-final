@@ -82,14 +82,14 @@ const ServiceCard = ({ s, idx, itemVariants }: { s: any; idx: number; itemVarian
 
       {/* 4. Text Content with same size but improved hierarchy */}
       <h4 
-        className="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors uppercase tracking-tight relative z-30"
+        className="text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-blue transition-colors relative z-30"
         style={{ transform: "translateZ(40px)" }}
       >
         {s.title}
       </h4>
 
       <p 
-        className="text-slate-500 mb-8 leading-relaxed font-medium flex-grow relative z-30"
+        className="text-slate-500 mb-4 leading-relaxed font-medium flex-grow relative z-30"
         style={{ transform: "translateZ(30px)" }}
       >
         {s.desc}
@@ -182,8 +182,8 @@ const Services: React.FC = () => {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#029ae3 0.8px, transparent 0.8px)', backgroundSize: '32px 32px' }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10 relative">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}

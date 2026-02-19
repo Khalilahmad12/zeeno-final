@@ -61,7 +61,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
   const headingText = "About Zeeno Global Software House";
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden py-12 bg-white">
+    <section ref={containerRef} className="relative overflow-hidden md:py-12 bg-white">
       {/* --- Advanced Decorative Background --- */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-100 to-transparent" />
@@ -164,7 +164,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
               </div>
 
               {/* Enhanced 'Our Full Story' Button */}
-              <motion.div variants={itemVariants} className="mt-6 pb-10">
+              <motion.div variants={itemVariants} className="mt-6">
                 <button
                   onClick={() => onNavigate && onNavigate('about')}
                   className="group relative bg-brand-dark text-white px-10 py-5 rounded-xl font-bold uppercase tracking-widest text-[10px] overflow-hidden shadow-2xl shadow-brand-dark/10 transition-all hover:shadow-brand-blue/20 hover:scale-[1.02] active:scale-95"

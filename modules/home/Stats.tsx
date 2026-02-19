@@ -150,9 +150,9 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
       {/* Refined Section Header */}
-      <div className="text-center mb-16 relative">
+      <div className="text-center mb-10 relative">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

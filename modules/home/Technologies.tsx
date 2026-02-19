@@ -129,7 +129,7 @@ const Technologies: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white pb-10 relative">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-white pb-10 relative">
       {/* Subtle blueprint grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#029ae3 1px, transparent 1px), linear-gradient(90deg, #029ae3 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -160,14 +160,7 @@ const Technologies: React.FC = () => {
         ))}
       </div>
 
-      {/* Industrial detail footer */}
-      <div className="mt-12 pt-6 border-t border-slate-50 flex items-center justify-between opacity-50 relative z-10">
-        <span className="text-[9px] font-bold text-slate-300 uppercase tracking-[0.4em]">Zeeno Globle / Engineering Standard 2.4.0</span>
-        <div className="flex gap-2">
-           <div className="w-1.5 h-1.5 bg-slate-100 rounded-full" />
-           <div className="w-1.5 h-1.5 bg-brand-blue/20 rounded-full" />
-        </div>
-      </div>
+     
     </div>
   );
 };

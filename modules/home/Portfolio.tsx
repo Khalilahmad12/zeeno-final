@@ -168,7 +168,7 @@ const Portfolio: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-10">
         {projects.map((p, idx) => (
           <PortfolioCard key={idx} p={p} onSelect={setSelectedProject} />
         ))}
