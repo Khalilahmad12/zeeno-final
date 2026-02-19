@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { motion, Variants, useTransform, useSpring, useMotionValue, useInView, useScroll } from 'framer-motion';
 
@@ -119,7 +118,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7"
+            className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <motion.div
               variants={wordVariants}
@@ -156,11 +155,11 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             
             <motion.div
               variants={wordVariants}
-              className="flex flex-col sm:flex-row gap-5"
+              className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto items-center lg:items-start justify-center lg:justify-start"
             >
               <button 
                 onClick={() => onNavigate('contact')}
-                className="group relative bg-brand-blue text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest overflow-hidden transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-brand-blue/20"
+                className="group relative w-full sm:w-auto bg-brand-blue text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest overflow-hidden transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-brand-blue/20"
               >
                 <span className="relative z-10">Launch Project</span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-expo" />
@@ -169,7 +168,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               
               <button 
                 onClick={() => onNavigate('portfolio')}
-                className="flex items-center justify-center gap-3 px-10 py-4 bg-white/5 border border-white/30 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all group active:scale-95"
+                className="flex items-center justify-center w-full sm:w-auto gap-3 px-10 py-4 bg-white/5 border border-white/30 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all group active:scale-95"
               >
                 Our Work
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -180,7 +179,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
             <motion.div 
               variants={wordVariants}
-              className="mt-3 pt-10 border-t border-white/5 flex items-center gap-14"
+              className="mt-3 pt-10 border-t border-white/5 flex flex-wrap items-center justify-center lg:justify-start gap-8 md:gap-14"
             >
               <div>
                 <div className="text-3xl font-black text-white tracking-tighter">
@@ -188,7 +187,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                 </div>
                 <div className="text-[10px] font-bold text-slate-300 uppercase tracking-widest mt-1">Global Deployments</div>
               </div>
-              <div className="w-px h-10 bg-white/10" />
+              <div className="w-px h-10 bg-white/10 hidden sm:block" />
               <div>
                 <div className="text-3xl font-black text-white tracking-tighter">
                   <AnimatedCounter value={98.4} decimals={1} suffix="%" />
@@ -223,7 +222,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="ml-4 text-left">
                     <div className="text-xl font-black text-white tracking-tight">CEO</div>
                     <div className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">S Ali Anjum</div>
                   </div>
